@@ -41,10 +41,7 @@ def switchGuess(guesses, goatDoors):
 
 def winPercentage(guesses, prizeDoors):
     guessesCount = len(guesses)
-    correctGuessesCount = 0
-    for i in range(len(guesses)):
-        if guesses[i] == prizeDoors[i]:
-            correctGuessesCount += 1
+    correctGuessesCount = (guesses == prizeDoors).sum()
     return correctGuessesCount*100.0/guessesCount
 
 if __name__ == "__main__":
